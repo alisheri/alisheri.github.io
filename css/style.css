@@ -102,6 +102,12 @@ p {
   color: var(--color-accent);
 }
 
+.site-nav a.active {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Main sections */
 
 main {
@@ -110,7 +116,8 @@ main {
   padding: 0 1.5rem;
 }
 
-.hero {
+.hero,
+.page-intro {
   padding: 3rem 0 3.5rem;
 }
 
@@ -142,6 +149,83 @@ main {
 
 .field-photos {
   padding: 3.5rem 0 4rem;
+}
+
+/* CV page */
+
+.cv-section {
+  padding: 3rem 0;
+}
+
+.cv-entry {
+  margin-bottom: 2rem;
+}
+
+.cv-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.cv-entry-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.cv-entry-date {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.cv-entry-org {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0.6rem;
+}
+
+.cv-entry-desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.cv-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.cv-list li {
+  margin-bottom: 0.35rem;
+}
+
+.cv-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.cv-skills li {
+  border: 1px solid var(--color-line);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
 }
 
 .photo-strip {
