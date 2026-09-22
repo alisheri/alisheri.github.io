@@ -12,7 +12,7 @@
 <body>
 
 <header class="site-header">
-  <a href="../index.html" class="wordmark">Your Name</a>
+  <a href="../index.html" class="wordmark">Alisher Igizgali</a>
   <nav class="site-nav">
     <a href="../index.html#about">About</a>
     <a href="../cv.html">CV</a>
@@ -38,7 +38,7 @@
 
     <div class="project-grid">
 
-      <a class="project-card" href="00-project-0/index.html" data-tags="geomechanics template">
+      <a class="project-card" href="00-project-0/index.html" data-tags="geomechanics template" data-date="2026-09">
         <span class="project-card-number">00</span>
         <h2 class="project-card-title">Vertical Stress Estimation</h2>
         <p class="project-card-desc">A worked example estimating overburden stress from density log data — the template used for every project on this site.</p>
@@ -54,15 +54,24 @@
 </main>
 
 <footer class="site-footer">
-  <span>&copy; 2026 Your Name</span>
+  <span>&copy; 2026 Alisher Igizgali</span>
   <span class="footer-links">
-    <a href="mailto:you@example.com">Email</a>
-    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-    <a href="https://github.com/your-username">GitHub</a>
+    <a href="mailto:alisher.yegizgali@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/alisheri">LinkedIn</a>
+    <a href="https://github.com/alisheri">GitHub</a>
   </span>
 </footer>
 
 <script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  
+  const grid = document.querySelector('.project-grid');
+  const sortedCards = [...grid.querySelectorAll('.project-card')].sort(
+    (a, b) => b.dataset.date.localeCompare(a.dataset.date)
+  );
+  sortedCards.forEach(card => grid.appendChild(card));
+
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
 
