@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html" class="wordmark">Your Name</a>
+  <nav class="site-nav">
+    <a href="../index.html#about">About</a>
+    <a href="../cv.html">CV</a>
+    <a href="index.html" class="active">Projects</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-intro">
+    <h1>Projects</h1>
+    <p class="hero-sub">Geomechanics work, built and shown in Jupyter notebooks.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="cv-section">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-tag="all">All</button>
+      <button class="filter-btn" data-tag="geomechanics">Geomechanics</button>
+      <button class="filter-btn" data-tag="template">Template</button>
+    </div>
+
+    <div class="project-grid">
+
+      <a class="project-card" href="00-project-0/index.html" data-tags="geomechanics template">
+        <span class="project-card-number">00</span>
+        <h2 class="project-card-title">Vertical Stress Estimation</h2>
+        <p class="project-card-desc">A worked example estimating overburden stress from density log data — the template used for every project on this site.</p>
+        <div class="project-card-tags">
+          <span class="tag">Geomechanics</span>
+          <span class="tag">Template</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>&copy; 2026 Your Name</span>
+  <span class="footer-links">
+    <a href="mailto:you@example.com">Email</a>
+    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+    <a href="https://github.com/your-username">GitHub</a>
+  </span>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+
+      cards.forEach(card => {
+        if (tag === 'all' || card.dataset.tags.includes(tag)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
